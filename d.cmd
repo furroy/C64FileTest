@@ -1,5 +1,5 @@
 java -jar ./KickAss.jar load_assets.asm  || goto :error
-.\C64Debugger disk1.d64
+.\C64Debugger -autorundisk -vicesymbols load_assets.vs disk1.d64
 exit
 
 :error
