@@ -6,7 +6,7 @@
 
 
 DISKCOPY: {
-		sei
+		//sei
 
 		// ensuring the processor port is writable
 		lda #$ff
@@ -32,7 +32,7 @@ DISKCOPY: {
 		lda #$35            //Bank out kernal and basic $a000-$bfff & $e000-$ffff
 		sta $01
 
-		// cli
+		//cli
 		rts
 	BANK_PAGES:
 		.byte $00

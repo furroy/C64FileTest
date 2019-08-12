@@ -29,17 +29,17 @@
 
 .segment SEGMENT_MAIN [] "Colors & Tiles"
 //* = $7000
-	CHAR_COLORS:
+	//CHAR_COLORS:
 		.import binary "assets/colors.bin"
 		.import binary "assets/letters_attrs.bin"
-	MAP_TILES:
+	//MAP_TILES:
 		.import binary "assets/tiles.bin"
-	EXTRA_PLAYER_TILE:
+	//EXTRA_PLAYER_TILE:
 		.byte $00, $00, $00, $00
 
 .segment SEGMENT_CHARS [] "Custom Chars"
 //* = $f000 "Charset"
-		CHARACTERS:
+		//CHARACTERS:
 			.import binary "assets/chars.bin"
-		LETTERS:
+		//LETTERS:
 			.import binary "assets/letters.bin"

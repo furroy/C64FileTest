@@ -10,5 +10,5 @@ C64Debugger disk1.d64 it all loads up and just have to type RUN.  Adding any of 
 -autorundisk or -alwaysjmp or -autojmp commands makes it not even load in the first program.
 
 
-If I run LOAD"HIRED",8 and RUN it launches and you can see the screen flash that it's working, but I
+If I run LOAD"HIRED SWORD II",8 and RUN it launches and you can see the screen flash that it's working, but I
 can't figure out how to make it just run automatically...
