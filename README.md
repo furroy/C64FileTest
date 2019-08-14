@@ -12,3 +12,5 @@ C64Debugger disk1.d64 it all loads up and just have to type RUN.  Adding any of 
 
 If I run LOAD"HIRED SWORD II",8 and RUN it launches and you can see the screen flash that it's working, but I
 can't figure out how to make it just run automatically...
+
+Using ./vice.cmd it runs in VICE with no issues.

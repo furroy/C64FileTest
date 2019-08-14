@@ -3,6 +3,7 @@
 *.prg
 *.sym
 *.vs
-d*.d64
+*.d64
 *.pdf
+*.dbg
 bin

@@ -19,6 +19,7 @@ BasicUpstart2(Entry)
 	}
 
 	Entry: {
+			.break
 			sei
 			lda #$7f	//Disable CIA IRQ's to prevent crash because
 			sta $dc0d
