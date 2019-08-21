@@ -55,11 +55,12 @@ DISKLOADER: {
 
 			cli
 			lda #$08
-			ldx $ba //Read from current disk drive present (Always use this instead of ldx #$08)
+			// ldx $ba //Read from current disk drive present (Always use this instead of ldx #$08)
+			ldx #8
 			ldy #$00 //Allow loading to address
 			jsr $ffba //Is device present?
 
-			lda #$08 //File length
+			lda fname_size //File length
 			ldx loadname
 			ldy loadname + 1    //Set the load name
 			jsr $ffbd          //Disk drive searches/loads the loadname
@@ -79,7 +80,7 @@ DISKLOADER: {
 			rts
 	onerror:
 			sta $d020
-			sta $0400
+			//sta $0400
 			rts
 	flashload:
 			inc borderCol
@@ -98,9 +99,14 @@ DISKLOADER: {
 			// !text"flname*"
 	borderCol:
 			.byte $00
+	fname_size:
+		.byte $00
 }
 
 .macro LoadBank(name) {
+			.var sz = name.size()
+			ldx #sz
+			stx DISKLOADER.fname_size
 			ldx #<fname
 			stx DISKLOADER.loadname
 			ldy #>fname
@@ -108,12 +114,12 @@ DISKLOADER: {
 			jmp !+
 		fname:
 			.text name
-			.text "*"
+			//.text "*"
 		!:
+		jsr DISKLOADER
 }
 
 .macro CopyPages(Dest, Pages) {
-		jsr DISKLOADER
 
 		// moved label into macro so we have access to it
 		.label LOAD_ADDRESS = $8000
